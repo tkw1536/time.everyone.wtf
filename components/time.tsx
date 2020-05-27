@@ -24,6 +24,10 @@ export default class Time extends React.Component<{updateInterval?: number, offs
     }
 
     render() {
+        return <fieldset>{this.renderInner()}</fieldset>;
+    }
+
+    renderInner() {
         const {time} = this.state;
         if (time === undefined) return "";
         const { format, offset, timezone } = this.props;

@@ -1,0 +1,12 @@
+body {
+    background-image: url("background.jpg");
+    background-color: darkgreen;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.window {
+    margin: 32px;
+    width: 500px;
+    max-width: 80%;
+}

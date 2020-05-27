@@ -9,13 +9,6 @@ import AnywhereOnEarth from '../components/parts/anywhere';
 import UTCTime from '../components/parts/utc';
 import LocalTime from '../components/parts/localtime';
 
-// the rendering of these components is dependent on client-side state
-// so we dynamically render them without SSR, fixing and potential issues
-import dynamic from 'next/dynamic';
-const Time = dynamic(() => import('../components/time'), {ssr: false});
-const TimePicker = dynamic(() => import('../components/picker'), {ssr: false});
-
-
 const ALL_ZONES = moment.tz.names();
 
 interface PageState {
@@ -79,6 +72,7 @@ export default class Home extends React.Component<{}, PageState> {
     return <div className="container">
       <Head>
         <title>Time</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
       <main>

@@ -5565,6 +5565,11 @@ wrappy@1:
   resolved "https://registry.yarnpkg.com/wrappy/-/wrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
   integrity sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=
 
+xp.css@^0.2.3:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/xp.css/-/xp.css-0.2.3.tgz#53de0ba7bdd657aaae36cd70e46ba265d7c9d840"
+  integrity sha512-uKPuJNvv8cvGp0YFhNie/iE+/3BlB9OjCCvVd+EdWcm8XaBN3FBzTftUdiSGzKWLPRIb3/2efSDsmUTs+0SNiA==
+
 xtend@^4.0.0, xtend@~4.0.1:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/xtend/-/xtend-4.0.2.tgz#bb72779f5fa465186b1f438f674fa347fdb5db54"
