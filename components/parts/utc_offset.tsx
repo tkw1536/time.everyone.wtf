@@ -14,7 +14,7 @@ export default class UTCOffset extends React.Component<{timezone: string}> {
         if (offset === 0) return <>in sync with</>;
 
         // compute before / after
-        const preposition = (offset < 0) ? 'behind' : 'ahead';
+        const preposition = (offset < 0) ? 'behind' : 'ahead of';
         
         let minutes = Math.abs(offset);
         const hours = Math.floor(minutes / 60);
