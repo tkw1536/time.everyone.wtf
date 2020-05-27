@@ -1,14 +1,18 @@
 import * as React from 'react';
 
+import moment, { Moment } from 'moment';
+import 'moment-timezone';
+
 interface TimeState {
-    time?: Date
+    time: Moment,
 }
 
-export default class Time extends React.Component<{updateInterval?: number}, TimeState> {
-    state: TimeState = {};
+export default class Time extends React.Component<{updateInterval?: number, offset?: number, timezone?: string, format?: string}, TimeState> {
+    state: TimeState = {
+        time: moment()
+    };
     private interval: number | null = null;
     componentDidMount() {
-        this.updateTime();
         this.interval = setInterval(this.updateTime.bind(this));
     }
     componentWillUnmount() {
@@ -16,12 +20,28 @@ export default class Time extends React.Component<{updateInterval?: number}, Tim
     }
 
     private updateTime() {
-        this.setState({time: new Date()});
+        this.setState({time: moment()});
     }
 
     render() {
         const {time} = this.state;
         if (time === undefined) return "";
-        return time.toISOString();
+        const { format, offset, timezone } = this.props;
+        
+        // set the time to the right timezone or offset
+        let timeFormat;
+        if (timezone !== undefined) {
+            timeFormat = time.tz(timezone);
+        } else if (offset !== undefined) {
+            timeFormat = time.utcOffset(offset);
+        } else {
+            timeFormat = time.utc();
+        }
+
+        // and format it
+        if (format === undefined)
+            return timeFormat.toISOString();
+        
+        return timeFormat.format(format);
     }
 }
