@@ -13,13 +13,13 @@ export default class UTCTime extends React.Component<{timezone: string}> {
       const {timezone} = this.props;
       return <Window title='UTC'>
         <p>
-          Coordinated Universal Time is a global time standard that all other timezones are based off. 
+          <b>Coordinated Universal Time</b> is a global time standard that all other timezones are defined relative to. 
         </p>
         <p>
-          You current timezone is <UTCOffset timezone={timezone}/> UTC.
+          You current timezone is <b><UTCOffset timezone={timezone}/></b> UTC.
         </p>
         <p>
-          The current time in <code>UTC</code> is:
+          The current time in <b>UTC</b> is:
         </p>
         <Time />
       </Window>

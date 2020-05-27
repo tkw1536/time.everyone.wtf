@@ -16,7 +16,7 @@ export default class AnywhereOnEarth extends React.Component<{timezone: string}>
         <p>
           Anywhere on Earth is a timezone commonly used for deadlines.
           It usuallly includes only a date, not a time.
-          As long as the day is correct (no matter way you are), you are within the deadline.
+          As long as the day is correct (no matter where you are), you are within the deadline.
         </p>
   
         <p>
@@ -26,7 +26,7 @@ export default class AnywhereOnEarth extends React.Component<{timezone: string}>
         <Time offset={-12} format='LL' />
 
         <p>
-            In your timezone, a new <b>Anywhere On Earth</b> day starts at <AnywhereOnEarthStart timezone={timezone} /> localtime. 
+            In your timezone, a new <b>Anywhere On Earth</b> day starts at <b><AnywhereOnEarthStart timezone={timezone} /></b> localtime. 
         </p>
       </Window>;
     }
