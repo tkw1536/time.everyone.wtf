@@ -10,12 +10,13 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head>
-          <script async src="https://inform.everyone.wtf/legal.min.js?small,fixed,dark,noborder,transparent" data-site-id="34f5e459-f24f-48a3-b100-a70417f25536"></script>
-        </Head>
+        <Head />
         <body>
           <Main />
           <NextScript />
+          <footer style={{position: 'fixed', right: 10, bottom: 10, color: 'white'}}>
+            <script src="https://inform.everyone.wtf/legal.min.js" data-site-id="34f5e459-f24f-48a3-b100-a70417f25536"></script>
+          </footer>
         </body>
       </Html>
     )
