@@ -11,7 +11,7 @@ export default class Time extends React.Component<{updateInterval?: number, offs
     state: TimeState = {
         time: moment()
     };
-    private interval: number | null = null;
+    private interval: NodeJS.Timeout | null = null;
     componentDidMount() {
         this.interval = setInterval(this.updateTime.bind(this));
     }
