@@ -8,9 +8,9 @@ const TimePicker = dynamic(() => import('../picker'), {ssr: false, loading: () =
 
 import Window from '../window';
 
-export default class LocalTime extends React.Component<{timezone: string, isAutoZone: boolean, onChange: (newTimeZone: string) => void, onReset: () => void}> {
+export default class LocalTime extends React.Component<{timezone: string, onChange: (newTimeZone: string) => void, onReset: () => void}> {
     render() {
-      const {timezone, isAutoZone, onChange, onReset} = this.props;
+      const {timezone, onChange, onReset} = this.props;
   
       return <Window title="Local Time">
         <p>
