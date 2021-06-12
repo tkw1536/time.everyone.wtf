@@ -17,7 +17,6 @@
     "xp.css": "^0.2.4"
   },
   "devDependencies": {
-    "@types/moment-timezone": "^0.5.13",
     "@types/node": "^15.0.1",
     "@types/react": "^17.0.4",
     "push-dir": "^0.4.1",
