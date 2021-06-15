@@ -1,6 +1,6 @@
 import * as React from "react";
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { withRouter, default as Router } from 'next/router'
+import { withRouter, Router } from 'next/router'
 
 import AnywhereOnEarth from '../../components/parts/anywhere';
 import UTCTime from '../../components/parts/utc';
@@ -14,33 +14,28 @@ import Head from 'next/head';
 interface ZoneProps {
     timezone: string;
     isAutoZone: boolean;
+    router: Router
 }
 
-export default class ZonePage extends React.Component<ZoneProps> {
-    private changeTimeZone = (newZone: string) => {
-        Router.push(`/zone/${newZone}`);
-    }
-
-    private resetTimeZone = () => {
-        Router.push('/');
-    }
+class ZonePage extends React.Component<ZoneProps> {
+    private goHome = () => this.props.router.push('/');
+    private goTz = (tz: string) => this.props.router.push(`/tz/${tz}`);
 
     render() {
-        const { timezone, isAutoZone } = this.props;
-        return <div className="container">
+        const { timezone } = this.props;
+        return <>
             <Head>
-                <title>Time</title>
+                <title>Time in {timezone}</title>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
             </Head>
-
-            <main>
-                <AnywhereOnEarth timezone={timezone} />
-                <UTCTime timezone={timezone} />
-                <LocalTime timezone={timezone} onChange={this.changeTimeZone} onReset={this.resetTimeZone} />
-            </main>
-        </div>;
+            
+            <LocalTime timezone={timezone} onChange={this.goTz} onReset={this.goHome} />
+            <UTCTime timezone={timezone} />
+            <AnywhereOnEarth timezone={timezone} />
+        </>;
     }
 }
+export default withRouter(ZonePage);
 
 export const getStaticProps: GetStaticProps = async (context) => {
     const timezone = (context.params!.zone as string[]).join("/");

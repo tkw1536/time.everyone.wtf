@@ -1,8 +1,8 @@
 import * as React from "react";
 
-export default class Window extends React.Component<{title: string}> {
+export default class Window extends React.Component<{title: string, statusbar?: React.ReactNode}> {
     render() {
-        const {title, children} = this.props;
+        const {title, children, statusbar} = this.props;
         return <div className="window">
             <div className="title-bar">
                 <div className="title-bar-text">{title}</div>
@@ -13,6 +13,7 @@ export default class Window extends React.Component<{title: string}> {
                 </div>
             </div>
             <div className="window-body">{children}</div>
+            {statusbar && <div className="status-bar">{statusbar}</div>}
       </div>;
     }
 }

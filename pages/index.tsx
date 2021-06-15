@@ -1,5 +1,7 @@
 import * as React from 'react';
-import ZonePage from './zone/[...zone]';
+
+import dynamic from 'next/dynamic';
+const ZonePage = dynamic(() => import('./tz/[...zone]'), {ssr: false});
 
 import moment from 'moment';
 import 'moment-timezone';
