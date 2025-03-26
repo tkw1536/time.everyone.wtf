@@ -281,7 +281,7 @@ class TimePicker extends React.Component<TimePickerProps> {
 
 interface XPTabProps {
     activeIndex: number;
-    children: Array<{ title: string; child: React.ReactChild }>;
+    children: Array<{ title: string; child: React.ReactNode }>;
     onChange: (index: number) => void;
 }
 

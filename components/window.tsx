@@ -1,6 +1,6 @@
 import * as React from "react";
 
-export default class Window extends React.Component<{title: string, statusbar?: React.ReactNode}> {
+export default class Window extends React.Component<{title: string, statusbar?: React.ReactNode, children?: React.ReactNode}> {
     render() {
         const {title, children, statusbar} = this.props;
         return <div className="window">
