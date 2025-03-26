@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[96],{1096:(e,t,s)=>{s.r(t),s.d(t,{default:()=>u});var r=s(7876),n=s(4232),a=s(841),f=s.n(a);s(1479);class u extends n.Component{render(){let{timezone:e}=this.props,t=f()().utcOffset(-12).startOf("day").tz(e).format("HH:mm");return(0,r.jsx)(r.Fragment,{children:t})}}}}]);
